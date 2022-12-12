@@ -44,6 +44,7 @@ services:
      - "8082:8082"
     depends_on:
      - "postgres"
+     - "api-users"
     environment:
      -  NODE_ENV=test
     secrets:
@@ -52,7 +53,7 @@ services:
 
 secrets:
   api_auth_secret_test:
-    file: ./secrets/auth.config.test.js 
+    file: ./secrets/auth.config.test.js
   db_user_secret_test:
     file: ./secrets/db.user.config.test.js
   db_rule_secret_test:
